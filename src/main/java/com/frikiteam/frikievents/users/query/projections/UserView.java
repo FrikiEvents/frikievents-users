@@ -12,11 +12,11 @@ import java.time.Instant;
 public class UserView {
 	@Id @Column(length=36) @Getter @Setter
     private String customerId;
-	@Column(length=50) @Getter @Setter
+	@Column(length=100) @Getter @Setter
 	private String firstName;
-	@Column(length=50) @Getter @Setter
+	@Column(length=100) @Getter @Setter
 	private String lastName;
-	@Column(length=1) @Getter @Setter
+	@Column(length=3) @Getter @Setter
 	private String type;
 	@Column(length=100) @Getter @Setter
 	private String description;

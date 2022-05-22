@@ -19,7 +19,7 @@ public class UserHistoryView {
 	private String firstName;
 	@Column(length=100) @Getter @Setter
 	private String lastName;
-	@Column(length=1) @Getter @Setter
+	@Column(length=3) @Getter @Setter
 	private String type;
 	@Column(length=100) @Getter @Setter
 	private String description;
