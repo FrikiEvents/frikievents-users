@@ -19,18 +19,18 @@ import com.frikiteam.frikievents.users.command.application.services.UserApplicat
 @RequestMapping("/users")
 @Tag(name = "Users")
 public class UserCommandController {
-    private final UserApplicationService customerApplicationService;
+    private final UserApplicationService userApplicationService;
     private final CommandGateway commandGateway;
 
-    public UserCommandController(UserApplicationService customerApplicationService, CommandGateway commandGateway) {
-        this.customerApplicationService = customerApplicationService;
+    public UserCommandController(UserApplicationService userApplicationService, CommandGateway commandGateway) {
+        this.userApplicationService = userApplicationService;
         this.commandGateway = commandGateway;
     }
 
     @PostMapping(path= "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> register(@RequestBody RegisterUserRequest registerUserRequest) {
         try {
-            Result<RegisterUserResponse, Notification> result = customerApplicationService.register(registerUserRequest);
+            Result<RegisterUserResponse, Notification> result = userApplicationService.register(registerUserRequest);
             if (result.isSuccess()) {
                 return ApiController.created(result.getSuccess());
             }
@@ -44,7 +44,7 @@ public class UserCommandController {
     public ResponseEntity<Object> edit(@PathVariable("userId") String userId, @RequestBody EditUserRequest editUserRequest) {
         try {
             editUserRequest.setUserId(userId);
-            Result<EditUserResponse, Notification> result = customerApplicationService.edit(editUserRequest);
+            Result<EditUserResponse, Notification> result = userApplicationService.edit(editUserRequest);
             if (result.isSuccess()) {
                 return ApiController.ok(result.getSuccess());
             }
