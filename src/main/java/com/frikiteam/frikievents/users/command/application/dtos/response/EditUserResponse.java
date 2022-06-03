@@ -4,7 +4,7 @@ import lombok.Value;
 
 @Value
 public class EditUserResponse {
-	private String customerId;
+	private String userId;
 	private String firstName;
 	private String lastName;
 	private String type;

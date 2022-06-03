@@ -11,7 +11,7 @@ import java.time.Instant;
 @Entity
 public class UserView {
 	@Id @Column(length=36) @Getter @Setter
-    private String customerId;
+    private String userId;
 	@Column(length=100) @Getter @Setter
 	private String firstName;
 	@Column(length=100) @Getter @Setter
@@ -31,8 +31,8 @@ public class UserView {
 	public UserView() {
 	}
 
-	public UserView(String customerId, String firstName, String lastName, String type, String description, String verified, String status, Instant createdAt) {
-		this.customerId = customerId;
+	public UserView(String userId, String firstName, String lastName, String type, String description, String verified, String status, Instant createdAt) {
+		this.userId = userId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.type = type;
